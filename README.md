@@ -8,13 +8,16 @@ Prerequisites
 Before you begin, make sure you have the following:
 
 OpenWeatherMap API Key: Sign up for a free OpenWeatherMap API key by following these steps:
-Go to OpenWeatherMap and sign up for a free account.
-Once you've registered and logged in, go to the API Keys section to create a new API key.
-Make note of your API key, as you will need it later.
+1. Go to OpenWeatherMap and sign up for a free account.
+2. Once you've registered and logged in, go to the API Keys section to create a new API key.
+3.Make note of your API key, as you will need it later.
+
+
 Twilio Account: Sign up for a Twilio account if you don't have one:
-Go to Twilio and sign up for a free account.
-After you've created your account, navigate to the Twilio Dashboard.
-Twilio API Credentials:
-In the Twilio Dashboard, find your Account SID and Auth Token. Make sure to keep these credentials secure.
-Twilio Phone Number:
-In the Twilio Dashboard, obtain a Twilio phone number for sending SMS messages. This will be the sender's phone number.
+1. Go to Twilio and sign up for a free account.
+2. After you've created your account, navigate to the Twilio Dashboard.
+3. Twilio API Credentials:
+   In the Twilio Dashboard, find your Account SID and Auth Token. Make sure to keep these credentials secure.
+4. Twilio Phone Number: In the Twilio Dashboard, obtain a Twilio phone number for sending SMS messages. This will be the sender's phone number.
+
+Now Clone this repo onto your machine then edit the config.env file and add the necessary placeholders
