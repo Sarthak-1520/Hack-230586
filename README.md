@@ -1,6 +1,4 @@
 # Hack-230586
-A git repo for the submission of the solution of the problems statement of Techfest's HackAI Competition. 
-
 Setting Up OpenWeatherMap API Key and Twilio API for SMS
 
 This guide will walk you through the process of setting up your OpenWeatherMap API key and Twilio API credentials for sending SMS messages. These steps are essential for integrating weather data retrieval and SMS notifications into your applications.
