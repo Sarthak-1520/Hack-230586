@@ -5,18 +5,13 @@ from twilio.rest import Client
 import smtplib
 
 # Initialize global variables
-API_KEY = 'a7778b9d2843b40392c4c57d823424c4'
+API_KEY = 'Place OpenWeather API key here'
 
 # Twilio credentials
-TWILIO_ACCOUNT_SID = 'AC9dbe08a33b8ccedb0c93f654a3b2c0ef'
-TWILIO_AUTH_TOKEN = '67f9743973ae33d238f3b9de1df7d57c'
-TWILIO_PHONE_NUMBER = '+12564641099'
-TO_PHONE_NUMBER = '+919993193578'
-
-# Email credentials
-EMAIL_SENDER = 'email_of_sender'
-EMAIL_PASSWORD = 'sender_email_password'
-TO_EMAIL_ADDRESS = 'recipient_email_address'
+TWILIO_ACCOUNT_SID = 'Place Twilio API Account SID here'
+TWILIO_AUTH_TOKEN = 'Place Twilio API Auth token here'
+TWILIO_PHONE_NUMBER = 'Place Twilio Phone number here'
+TO_PHONE_NUMBER = 'Place personal phone number here'
 
 # Create an agent
 alice = Agent(name="alice", seed="alice recovery phrase")
