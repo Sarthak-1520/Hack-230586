@@ -6,11 +6,6 @@ import smtplib
 import os 
 
 
-API_KEY = 'Place OpenWeather API key here'
-TWILIO_ACCOUNT_SID = 'Place Twilio API Account SID here'
-TWILIO_AUTH_TOKEN = 'Place Twilio API Auth token here'
-TWILIO_PHONE_NUMBER = 'Place Twilio Phone number here'
-TO_PHONE_NUMBER = 'Place personal phone number here'
 
 # Create an agent
 alice = Agent(name="alice", seed="alice recovery phrase")
