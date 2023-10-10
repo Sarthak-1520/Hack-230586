@@ -1,31 +1,29 @@
 
-from email_alert import send_alert_email
-from utils import get_exchange_rates , send_twilio_mssg 
-from twilio.rest import Client
-import keys
+from utils import get_exchange_rates , send_sms_alert ,get_inputs
+from uagents import Agent, Context
 
-# Define the base and foreign currencies to monitor
-# base_currency = "USD"
-# foreign_currency = "INR"
 
+
+# Define the base currency to monitor
 base_currency = input("Enter the base Currency Eg : 'INR' , 'USD', etc ")
 
-final_alert_message = get_exchange_rates(base_currency)
+num2 , foreign_curr_list , upper_threshold_list , lower_threshold_list = get_inputs()
 
-client = Client(keys.account_sid ,keys.auth_token)  
-message = client.messages.create(
-    body=final_alert_message,
-    from_=keys.twilio_number, to = keys.target_number)
 
-print(message.body)
-    
-# message = send_twilio_mssg(final_alert_message)
-# print(message.body)
+# Defining an Agent
+CurrencyAgent = Agent(name="Curry")
 
+# To send messages in an interval of 3600 seconds
+@CurrencyAgent.on_interval(period=3600)
+async def check_exchange_rate(ctx: Context):
+    final_alert_message = get_exchange_rates(num2 , foreign_curr_list , upper_threshold_list , lower_threshold_list,base_currency)
+    send_sms_alert(final_alert_message)
+
+if __name__ == "__main__":
+    CurrencyAgent.run()
 
 
 # Sample inputs :
-
 # INR
 # Y
 # 3
@@ -39,7 +37,7 @@ print(message.body)
 # 10
 # 10
 
- # Sample Inputs :
+# Sample Inputs :
 # INR
 # n
 # USD
