@@ -3,11 +3,10 @@ from uagents import Agent, Context
 import requests
 from twilio.rest import Client
 import smtplib
+import os 
 
-# Initialize global variables
+
 API_KEY = 'Place OpenWeather API key here'
-
-# Twilio credentials
 TWILIO_ACCOUNT_SID = 'Place Twilio API Account SID here'
 TWILIO_AUTH_TOKEN = 'Place Twilio API Auth token here'
 TWILIO_PHONE_NUMBER = 'Place Twilio Phone number here'
