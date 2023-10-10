@@ -5,17 +5,17 @@ import requests
 # Initialize the uAgent
 alice = Agent(name="alice", seed="alice recovery phrase")
 
-# Twilio configuration
-TWILIO_ACCOUNT_SID = 'YOUR_TWILIO_ACCOUNT_SID'
-TWILIO_AUTH_TOKEN = 'YOUR_TWILIO_AUTH_TOKEN'
-TWILIO_PHONE_NUMBER = 'YOUR_TWILIO_PHONE_NUMBER'
-TO_PHONE_NUMBER = 'RECIPIENT_PHONE_NUMBER'
+# Twilio credentials
+TWILIO_ACCOUNT_SID = 'AC9dbe08a33b8ccedb0c93f654a3b2c0ef'
+TWILIO_AUTH_TOKEN = '67f9743973ae33d238f3b9de1df7d57c'
+TWILIO_PHONE_NUMBER = '+12564641099'
+TO_PHONE_NUMBER = '+919993193578'
 
 # Initialize the Twilio client
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 # Exchange Rates API configuration
-API_KEY = 'YOUR_EXCHANGE_RATES_API_KEY'
+API_KEY = 'c162e89ba3c4dad715caf5faeb3caa36'
 BASE_URL = 'https://api.exchangeratesapi.io/v4/latest/'
 
 @alice.on_interval(period=2.0)

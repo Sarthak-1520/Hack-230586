@@ -1,10 +1,12 @@
 import requests
 from twilio.rest import Client
 import keys
+
 from email_alert import send_alert_email
+from dotenv import load_dotenv,dotenv_values
 
 client = Client(keys.account_sid ,keys.auth_token)
-
+load_dotenv()
 # Define the base and foreign currencies to monitor
 base_currency = "USD"
 foreign_currency = "INR"
@@ -24,11 +26,11 @@ foreign_currency = "INR"
 # 10
 # 10
 
-# INR
-# n
-# USD
-# 82.60
-# 82.55
+#  INR
+#  n
+#  USD
+#  82.60
+#  82.55
 
 #Take inputs for base_currency and foreign_currency
 base_currency = input("Enter the base Currency Eg : 'INR' , 'USD', etc ")
@@ -50,7 +52,7 @@ if(flag=='y' or flag == 'Y'):
         lower_threshold_list.append(temp2)
         
     # Fetch the latest exchange rate data from an API
-    api_url = f"http://data.fixer.io/api/latest?access_key=95d1b51e9ec3c3d2beb0b7353d6830ad"
+    api_url = f"http://data.fixer.io/api/latest?access_key={Exchange_Key}"
     response = requests.get(api_url)
     
     if response.status_code == 200:
