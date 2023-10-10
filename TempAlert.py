@@ -4,7 +4,9 @@ import requests
 from twilio.rest import Client
 import smtplib
 import os 
+from dotenv import dotenv_values
 
+config = dotenv_values("config.env")
 
 
 # Create an agent
@@ -16,7 +18,7 @@ def set_preferences(min_temp, max_temp, location):
     MIN_TEMP = min_temp
     MAX_TEMP = max_temp
     LOCATION = location
-    BASE_URL = f'http://api.openweathermap.org/data/2.5/weather?q={LOCATION}&appid={API_KEY}'
+    BASE_URL = f'http://api.openweathermap.org/data/2.5/weather?q={LOCATION}&appid={config['API_KEY']}'
 
 # Connect to a weather API
 @alice.on_interval(period=3600)
@@ -27,17 +29,10 @@ async def get_weather(ctx: Context):
 
 # Send SMS alert
 def send_sms_alert(message):
-    client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-    client.messages.create(to=TO_PHONE_NUMBER, from_=TWILIO_PHONE_NUMBER, body=message)
+    client = Client(config['TWILIO_ACCOUNT_SID'], config['TWILIO_AUTH_TOKEN'])
+    client.messages.create(to=(config['TO_PHONE_NUMBER'], from_=(config['TWILIO_PHONE_NUMBER'], body=message)
 
-# Send email alert
-def send_email_alert(subject, body):
-    message = f'Subject: {subject}\n\n{body}'
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(EMAIL_SENDER, EMAIL_PASSWORD)
-    server.sendmail(EMAIL_SENDER, TO_EMAIL_ADDRESS, message)
-    server.quit()
+
 
 # Check temperature and send alert
 @alice.on_interval(period=3600)
