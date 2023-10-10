@@ -1,12 +1,13 @@
 import requests
 from twilio.rest import Client
-import keys
-
+# import keys
+import os 
 from email_alert import send_alert_email
 from dotenv import load_dotenv,dotenv_values
-
-client = Client(keys.account_sid ,keys.auth_token)
 load_dotenv()
+dotenv_values()
+client = Client(os.getenv("account_sid") , os.getenv("auth_token"))
+
 # Define the base and foreign currencies to monitor
 base_currency = "USD"
 foreign_currency = "INR"
@@ -81,7 +82,7 @@ if(flag=='y' or flag == 'Y'):
             
         message = client.messages.create(
         body=final_alert_message,
-        from_=keys.twilio_number, to = keys.target_number)
+        from_=os.getenv("twilio_number"), to = os.getenv("target_number"))
 
         print(message.body)
     else:
@@ -133,7 +134,7 @@ else:
             
         message = client.messages.create(
         body=alert_message,
-        from_=keys.twilio_number, to = keys.target_number)
+        from_=os.getenv("twilio_number"), to = os.getenv("target_number"))
 
         print(message.body)
     else:
