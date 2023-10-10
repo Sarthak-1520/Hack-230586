@@ -10,7 +10,7 @@ Before you begin, make sure you have the following:
 OpenWeatherMap API Key: Sign up for a free OpenWeatherMap API key by following these steps:
 1. Go to OpenWeatherMap and sign up for a free account.
 2. Once you've registered and logged in, go to the API Keys section to create a new API key.
-3.Make note of your API key, as you will need it later.
+3. Make note of your API key, as you will need it later.
 
 
 Twilio Account: Sign up for a Twilio account if you don't have one:
