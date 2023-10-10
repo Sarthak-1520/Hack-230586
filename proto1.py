@@ -1,6 +1,5 @@
 # Import necessary libraries
 from uagents import Agent, Context
-
 import requests
 from twilio.rest import Client
 import smtplib
